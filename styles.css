@@ -5,113 +5,139 @@ body {
     margin: 0px;
 }
 
-p{
+p {
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: medium;
+    font-size: 26px;
 }
 
-.parentindex {
-        display: grid;
-        grid-template-columns: 1fr ;
-        grid-template-rows: auto ;
-        grid-template-areas:
-        "nav"
-        "header"
-        "main"
-        "s1"
-        "figure"
-        "s2"
-        "footer";
 
-    }
+.parentindex {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 3fr 3fr 1fr 3fr auto;
+    grid-template-areas: 
+    "nav"
+    "header"
+    "main"
+    "s1"
+    "figure"
+    "s2"
+    "footer";
+}
 
 .parent {
-        display: grid;
-        grid-template-columns: 1fr ;
-        grid-template-rows: auto ;
-        grid-template-areas:
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto 100px auto auto ;
+    grid-template-areas:
         "nav"
         "header"
         "main"
         "footer";
-    }
- 
-    header {  
-        background-image: linear-gradient(to bottom, rgba(174,236,239,1), rgba(174,236,239,0)) ;
-        padding: 10px; 
-        margin: 0px;
-        grid-area: header;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-around;
-        color: #7d7c7a
+}
+
+header {  
+    background-image: linear-gradient(to bottom, rgba(174,236,239,1), rgba(174,236,239,0)) ;
+    padding: 10px; 
+    margin: 0px;
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    color: #7d7c7a;
+}
     
-    }
+nav{
+    background-color: #5b5b5b;
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+nav > ul > li {
+    font: 32px 'Nanum Gothic', sans-serif;
+    padding: 10px;
+}
+
+main{
+    background-color: #fdf7fa;
+    padding: 10px;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+#section1 {
+    color: #fdf7fa; 
+    background-color: #7d7c7a;
+    padding: 10px;       
+    grid-area: s1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+figure {
+    grid-area: figure;
+    padding: 0px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+#section2 { 
+    background-color: #aeecef;
+    color: #7d7c7a;
+    padding: 10px;
+    grid-area: s2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer {  
+    background-color: #5b5b5b;
+    color: #7d7c7a;
+    grid-area: footer;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}   
+
+h1{
+    font-size: 50px;
+}
+
+.HeaderH1{
+    margin:auto;
+    padding: 10px;
+    order: 1;
+}
     
-    nav{
-        background-color: #5b5b5b;
-        grid-area: nav;
-        position: sticky;
-        top: 0;
-    }
-
-    main{
-        background-color: #fdf7fa;
-        padding: 10px;
-        grid-area: main;
-
-    }
-
-    #section1 {
-        color: #fdf7fa; 
-        background-color: #7d7c7a;
-        padding: 10px;
-        grid-area: s1;
-    }
-
-    figure {
-        grid-area: figure;
-        justify-self: center;
-        align-self: center;
-        padding: 0px;
-    }
-
-    #section2 { 
-        background-color: #aeecef;
-        color: #7d7c7a;
-        padding: 10px;
-        grid-area: s2;
-    }
-
-    footer {  
-        background-color: #5b5b5b;
-        color: #7d7c7a;
-        padding: 50px;
-        grid-area: footer;
-
-    }   
-
-    .HeaderH1{
-        margin:auto;
-        padding: 10px;
-        order: 1;
-    }
+.HeaderH3{
+    margin: auto;
+    padding: 5px;
+    order: 2;
+    font-size: 35px;
+}
     
-    .HeaderH3{
-        margin: auto;
-        padding: 5px;
-        order: 2;
-    }
-    
-    .headerimg{ 
-        margin: 15px;
-        padding: 1px;
-        box-shadow: 5px 5px #5b5b5b; 
-        order: 3;
-    
-    }
+.headerimg{ 
+    margin: 15px;
+    padding: 1px;
+    box-shadow: 5px 5px #5b5b5b; 
+    order: 3;
+}
+
 li{
     background-color: #aeecef;
     padding: 5px;
@@ -121,7 +147,7 @@ li{
     text-align: center;
     display: inline ;
     cursor: pointer;
-    }
+}
 
 li a.active{
     background-color: #fdf7fa;
@@ -133,31 +159,36 @@ li a.active{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50px;
+    width: 200px;
     padding: 5px;
     border: solid 5px #5b5b5b;
 }
 
 .flex-container {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+form{
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 input[type=text] {
-        width: 100%;
-        padding: 5px 5px;
-        margin: 8px 0;
-        box-sizing: border-box;
-      }
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
 
 input[type=email]{
-        width: 100%;
-        padding: 5px 5px;
-        margin: 8px 0;
-        box-sizing: border-box;
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 input[type=tel]{
@@ -166,15 +197,19 @@ input[type=tel]{
     margin: 8px 0;
     box-sizing: border-box;
 }
+
 input[type=radio]{
     margin: 20px 10px;
     box-sizing: border-box;
 }
+
 label{
     width: 100%;
     padding: 5px 5px;
     box-sizing: border-box;
+    font-size: 26px;
 }
+
 textarea{
     width: 100%;
     padding: 5px 5px;
@@ -192,13 +227,14 @@ input[type=button], input[type=submit], input[type=reset]{
     cursor: pointer;
     width: 300px;
     font-family: 'Nanum Gothic', sans-serif;
-  }
+    font-size: 26px;
+}
 
 input[type=file]{
     display: none;
 }
 
-  .selfie{
+.selfie{
     display: block;
     background-color: #5b5b5b;
     border: none;
@@ -210,43 +246,73 @@ input[type=file]{
     width: 300px;
     text-align: center;
     font-family: 'Nanum Gothic', sans-serif;
-  }
+    font-size: 26px;
+}
 
-  @media screen and (min-width:600px) and (orientation:portrait) {
-    nav{
-        display: flex;
-        justify-content: space-around;
+iframe{
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ipad pro and up */
+
+@media screen and (min-width: 991px) and (orientation:portrait) {
+    p{
+        font-size: 20px;
     }
-
-    header{
-        flex-flow: row wrap;
-        justify-content: space-between;
+    
+    h1{
+        font-size: 35px;
     }
 
     .HeaderH3{
-        order: 3;
+        font-size: 26px;
     }
 
-    .headerimg{
-        order: 2;
+    nav > ul > li {
+        font-size: 20px;
     }
+
+    label{
+        font-size: 18px;
+    }
+
+    input[type=button], input[type=submit], input[type=reset], .selfie{
+        font-size: 20px;
+    }
+
+
     .parentindex {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 50px 1fr 1fr 1fr 1fr 150px;
+        grid-template-rows: 100px 1fr 1fr auto 1fr 150px;
         grid-template-areas:
-        "nav nav"
-        "header header"
-        "main main"
-        "s1 figure"
-        "s2 s2"
-        "footer footer";
+            "nav nav"
+            "header header"
+            "main main"
+            "s1 figure"
+            "s2 s2"
+            "footer footer";
     }
 }
+  
+/* desktop */
 
-@media screen and (min-width:897px){
+@media screen and (min-width:1025px){
+
+    .flex-container{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    main, #section1, #section2{
+        padding-left:5%;
+        padding-right: 5%;
+    }
+   
     .parentindex{
         grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: 50px 1fr 1fr 1fr 1fr 150px;
+        grid-template-rows: 100px 1fr 1fr auto 1fr 150px;
         grid-template-areas:
         "nav nav nav"
         "header header header"
@@ -255,13 +321,4 @@ input[type=file]{
         "figure s2 s2"
         "footer footer footer"
     }
-    p{
-        font-size: large;
-    }
 }
-
-nav{
-    display: flex;
-    justify-content: space-around;
-}
-
